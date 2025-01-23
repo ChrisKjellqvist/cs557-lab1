@@ -9,18 +9,12 @@ abstract class TestWithBackendSelect
     extends AnyFlatSpec
     with BeforeAndAfterAllConfigMap {
   var backend = ""
-  var simAnnos: AnnotationSeq = Seq()
-  override protected def beforeAll(configMap: ConfigMap): Unit = {
-    var backend = ""
-    if (configMap.get("backend").isDefined) {
-      backend = configMap.get("backend").fold("")(_.toString)
-    }
-    simAnnos = simAnnos ++ (backend.toLowerCase() match {
-      case "vcs" => Seq(VcsBackendAnnotation) ++ Seq(WriteFsdbAnnotation)
-      case "verilator" =>
-        Seq(VerilatorBackendAnnotation) ++ Seq(WriteVcdAnnotation)
-      case "icarus" => Seq(IcarusBackendAnnotation) ++ Seq(WriteVcdAnnotation)
-      case _        => Seq(TreadleBackendAnnotation) // Used treadle by default
-    })
-  }
+  /***** simulate using tradle (default) *****/
+//  var simAnnos: AnnotationSeq = Seq()
+  /***** use verilator simulator *****/
+  // val simAnnos = Seq(VerilatorBackendAnnotation) ++ Seq(WriteVcdAnnotation)
+  /***** use VCS *****/
+   val simAnnos = Seq(VcsBackendAnnotation) ++ Seq(WriteFsdbAnnotation)
+  /***** use icarus *****/
+  // val simAnnos = Seq(IcarusBackendAnnotation) ++ Seq(WriteVcdAnnotation)
 }
