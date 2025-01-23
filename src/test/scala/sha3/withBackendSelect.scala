@@ -14,7 +14,7 @@ abstract class TestWithBackendSelect
   /***** use verilator simulator *****/
   // val simAnnos = Seq(VerilatorBackendAnnotation) ++ Seq(WriteVcdAnnotation)
   /***** use VCS *****/
-   val simAnnos = Seq(VcsBackendAnnotation) ++ Seq(WriteFsdbAnnotation)
+   val simAnnos = Seq(VcsBackendAnnotation) ++ Seq(WriteVpdAnnotation)
   /***** use icarus *****/
   // val simAnnos = Seq(IcarusBackendAnnotation) ++ Seq(WriteVcdAnnotation)
 }
