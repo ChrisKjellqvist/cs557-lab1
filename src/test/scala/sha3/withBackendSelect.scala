@@ -10,11 +10,11 @@ abstract class TestWithBackendSelect
     with BeforeAndAfterAllConfigMap {
   var backend = ""
   /***** simulate using tradle (default) *****/
-//  var simAnnos: AnnotationSeq = Seq()
+  var simAnnos: AnnotationSeq = Seq()
   /***** use verilator simulator *****/
-  // val simAnnos = Seq(VerilatorBackendAnnotation) ++ Seq(WriteVcdAnnotation)
+//   val simAnnos = Seq(VerilatorBackendAnnotation) ++ Seq(WriteVcdAnnotation)
   /***** use VCS *****/
-   val simAnnos = Seq(VcsBackendAnnotation) ++ Seq(WriteVpdAnnotation)
+//   val simAnnos = Seq(VcsBackendAnnotation) ++ Seq(WriteVpdAnnotation)
   /***** use icarus *****/
   // val simAnnos = Seq(IcarusBackendAnnotation) ++ Seq(WriteVcdAnnotation)
 }
